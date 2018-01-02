@@ -1,2 +1,2 @@
 #pattern  filter=crypt diff=crypt
-secrets.yaml  filter=crypt diff=crypt
+secrets.yaml filter=crypt diff=crypt
