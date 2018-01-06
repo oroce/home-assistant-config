@@ -1,0 +1,23 @@
+#- platform: miflora
+#  mac: "C4:7C:8D:60:93:34"
+#  monitored_conditions:
+#    - temperature
+#    - light
+#    - conductivity
+#    - moisture
+#    - battery
+- platform: darksky
+  api_key: !secret darksky_apikey
+  monitored_conditions:
+    - icon
+    - summary
+    - precip_intensity
+    - precip_probability
+    - temperature
+    - temperature_max
+    - temperature_min
+- platform: mqtt
+  name: "FrontDoor status"
+  state_topic: "sensor/front-door"
+  unit_of_measurement: ""
+#  - platform: aqara

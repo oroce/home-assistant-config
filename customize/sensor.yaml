@@ -1,0 +1,98 @@
+sun.sun:
+  hidden: true
+sensor.dark_sky_icon:
+  hidden: true
+sensor.dark_sky_temperature:
+  friendly_name: 'Current'
+sensor.dark_sky_summary:
+  friendly_name: 'Forecast'
+  icon: mdi:eye
+sensor.dark_sky_precip_probability:
+  friendly_name: 'Chance of Precipitation'
+sensor.dark_sky_precip_intensity:
+  friendly_name: 'Rain Gauge'
+sensor.dark_sky_daily_high_temperature:
+  friendly_name: 'High'
+sensor.dark_sky_daily_low_temperature:
+  friendly_name: 'Low'
+sensor.dark_sky_precip:
+  friendly_name: 'Precipitation Type'
+snesor.dark_sky_precip_type:
+  hidden: true
+sensor.downstairs_temperature:
+  friendly_name: 'Downstairs Temperature'
+sensor.upstairs_temperature:
+  friendly_name: 'Upstairs Temperature'
+sensor.harmony_living_room:
+  hidden: true
+sensor.current_activity:
+  hidden: false
+  entity_picture: http://wreckage.johndenverschoolofflight.com/hass/harmony.png
+  friendly_name: "Current Activity"
+sensor.brightness_pntry:
+  hidden: true
+sensor.brightness_lr:
+  hidden: true
+sensor.color_temp_lr:
+  hidden: true
+sensor.color_temp_br:
+  hidden: true
+sensor.color_temp_cl:
+  hidden: true
+sensor.cpu_temperature:
+  friendly_name: 'CPU Temp'
+sensor.cpu_use:
+  friendly_name: 'CPU Usage'
+sensor.disk_use_:
+  friendly_name: 'Disk Usage'
+sensor.ram_use:
+  friendly_name: 'RAM Usage'
+sensor.door_status_front:
+  icon: mdi:key-variant
+  hidden: true
+sensor.door_status_rear:
+  icon: mdi:key-variant
+  hidden: true
+sensor.time:
+  hidden: true
+sensor.mi_flora_conductivity:
+  friendly_name: 'Conductivity'
+sensor.mi_flora_moisture:
+  friendly_name: 'Moisture'
+sensor.mi_flora_light_intensity:
+  friendly_name: 'Light intensity'
+sensor.mi_flora_temperature:
+  friendly_name: 'Temperature'
+sensor.mi_flora_battery:
+  friendly_name: 'Battery'
+sensor.humidity_158d000153196d:
+  friendly_name: 'Bedroom Humidity'
+  icon: mdi:water-percent
+sensor.temperature_158d000153196d:
+  friendly_name: 'Bedroom Temp'
+  icon: mdi:temperature-celsius
+light.gateway_light_286c0788abe2:
+  friendly_name: 'Gateway Light'
+  icon: mdi:flashlight
+sensor.temperature_158d0001824749:
+  friendly_name: 'Living Room Temp'
+  icon: mdi:temperature-celsius
+sensor.humidity_158d0001824749:
+  friendly_name: 'Living Room Humidity'
+  icon: mdi:water-percent
+sensor.temperature_158d0001823f4a:
+  friendly_name: 'Loggia Temp'
+  icon: mdi:temperature-celsius
+sensor.humidity_158d0001823f4a:
+  friendly_name: 'Loggia Humidity'
+  icon: mdi:water-percent
+sensor.illumination_286c0788abe2:
+  friendly_name: Illumination
+  icon: mdi:lightbulb-on-outline
+sensor.frontdoor_status:
+  friendly_name: 'Front Door Status'
+  icon: mdi:door
+switches.tv:
+  icon: mdi:television-classic
+switches.chuwi:
+  icon: mdi:floor-plan

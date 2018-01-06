@@ -1,0 +1,233 @@
+oroce_nexus6:
+  name: Robi
+  mac: EC:88:92:78:7F:7A
+  picture: 'https://s.gravatar.com/avatar/1e81e4ce8029433112b441419d3f431c?s=280'
+  track: no
+  hide_if_away: no
+netvdgiw_oneplus5:
+  name: Robi
+  mac: 94:65:2d:2f:ce:aa
+  picture: !secret avatar_robi 
+  track: yes
+  hide_if_away: no
+dori_android:
+  name: Dori
+  picture: !secret avatar_dori
+  mac: 78:F8:82:B5:B4:84
+  track: yes
+  hide_if_away: no
+
+dani_iphone:
+  name: Dani iPhone
+  mac: E0:B5:2D:84:5D:18
+  track: yes
+  hide_if_away: yes
+
+dani_ipad:
+  name: Dani iPad
+  mac: 24:24:0E:48:47:A2
+  track: yes
+  hide_if_away: yes
+
+b4430dfc051d:
+  hide_if_away: false
+  mac: B4:43:0D:FC:05:1D
+  name: b4430dfc051d
+  picture:
+  track: false
+  vendor: Broadlink Pty Ltd
+
+'546009061852':
+  hide_if_away: false
+  mac: 54:60:09:06:18:52
+  name: '546009061852'
+  picture:
+  track: false
+  vendor: Google, Inc.
+
+00f13104128d:
+  hide_if_away: false
+  mac: 00:F1:31:04:12:8D
+  name: 00f13104128d
+  picture:
+  track: false
+  vendor: unknown
+
+f40f243c43c3:
+  hide_if_away: false
+  mac: F4:0F:24:3C:43:C3
+  name: f40f243c43c3
+  picture:
+  track: false
+  vendor: Apple, Inc.
+
+286c0710855d:
+  hide_if_away: false
+  mac: 28:6C:07:10:85:5D
+  name: 286c0710855d
+  picture:
+  track: false
+  vendor: XIAOMI Electronics,CO.,LTD
+
+40b8370a8f29:
+  hide_if_away: false
+  mac: 40:B8:37:0A:8F:29
+  name: 40b8370a8f29
+  picture:
+  track: false
+  vendor: Sony Mobile Communications AB
+
+a470d61d7803:
+  hide_if_away: false
+  mac: A4:70:D6:1D:78:03
+  name: a470d61d7803
+  picture:
+  track: false
+  vendor: Motorola Mobility LLC, a Lenovo Company
+
+38cadacc4a0f:
+  hide_if_away: false
+  mac: 38:CA:DA:CC:4A:0F
+  name: 38cadacc4a0f
+  picture:
+  track: false
+  vendor: Apple, Inc.
+
+94dbc9358ba4:
+  hide_if_away: false
+  mac: 94:DB:C9:35:8B:A4
+  name: 94dbc9358ba4
+  picture:
+  track: false
+  vendor: AzureWave Technology Inc.
+
+286c0788abe2:
+  hide_if_away: false
+  mac: 28:6C:07:88:AB:E2
+  name: 286c0788abe2
+  picture:
+  track: false
+  vendor: XIAOMI Electronics,CO.,LTD
+
+b0e235e5763a:
+  hide_if_away: false
+  mac: B0:E2:35:E5:76:3A
+  name: b0e235e5763a
+  picture:
+  track: false
+  vendor: Xiaomi Communications Co Ltd
+
+ec1f72acee9b:
+  hide_if_away: false
+  mac: EC:1F:72:AC:EE:9B
+  name: ec1f72acee9b
+  picture:
+  track: false
+  vendor: SAMSUNG ELECTRO-MECHANICS(THAILAND)
+
+74234493d776:
+  hide_if_away: false
+  mac: 74:23:44:93:D7:76
+  name: 74234493d776
+  picture:
+  track: false
+  vendor: Xiaomi Communications Co Ltd
+
+38f23e1a505c:
+  hide_if_away: false
+  mac: 38:F2:3E:1A:50:5C
+  name: 38f23e1a505c
+  picture:
+  track: false
+  vendor: Microsoft Mobile Oy
+
+b827eb5a9256:
+  hide_if_away: false
+  mac: B8:27:EB:5A:92:56
+  name: b827eb5a9256
+  picture:
+  track: false
+  vendor: Raspberry Pi Foundation
+
+506583fde1d2:
+  hide_if_away: false
+  mac: 50:65:83:FD:E1:D2
+  name: 506583fde1d2
+  picture:
+  track: false
+  vendor: Texas Instruments
+
+78c3e91d1d0c:
+  hide_if_away: false
+  mac: 78:C3:E9:1D:1D:0C
+  name: 78c3e91d1d0c
+  picture:
+  track: false
+  vendor: Samsung Electronics Co.,Ltd
+
+a020a61c3139:
+  hide_if_away: false
+  mac: A0:20:A6:1C:31:39
+  name: a020a61c3139
+  picture:
+  track: false
+  vendor: Espressif Inc.
+
+40f30192f635:
+  hide_if_away: false
+  mac: 40:F3:01:92:F6:35
+  name: 40f30192f635
+  picture:
+  track: false
+  vendor: unknown
+
+f4911e053a74:
+  hide_if_away: false
+  mac: F4:91:1E:05:3A:74
+  name: f4911e053a74
+  picture:
+  track: false
+  vendor: ZHUHAI EWPE INFORMATION TECHNOLOGY INC
+
+94652d2fceaa:
+  hide_if_away: false
+  mac: 94:65:2D:2F:CE:AA
+  name: 94652d2fceaa
+  picture:
+  track: false
+  vendor: OnePlus Technology (Shenzhen) Co., Ltd
+
+a0f3c1c59798:
+  hide_if_away: false
+  mac: A0:F3:C1:C5:97:98
+  name: a0f3c1c59798
+  picture:
+  track: false
+  vendor: TP-LINK TECHNOLOGIES CO.,LTD.
+
+b827eb0fc703:
+  hide_if_away: false
+  mac: B8:27:EB:0F:C7:03
+  name: b827eb0fc703
+  picture:
+  track: false
+  vendor: Raspberry Pi Foundation
+
+00e04c534458:
+  hide_if_away: false
+  icon:
+  mac: 00:E0:4C:53:44:58
+  name: 00e04c534458
+  picture:
+  track: false
+  vendor: REALTEK SEMICONDUCTOR CORP.
+
+30aea404c348:
+  hide_if_away: false
+  icon:
+  mac: 30:AE:A4:04:C3:48
+  name: 30aea404c348
+  picture:
+  track: false
+  vendor: Espressif Inc.
+

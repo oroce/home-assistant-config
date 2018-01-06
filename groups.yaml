@@ -1,0 +1,38 @@
+bedroom:
+  name: Bedroom
+  entities:
+    - light.bedroom
+    - sensor.temperature_158d000153196d
+    - sensor.humidity_158d000153196d
+loggia:
+  name: Loggia
+  entities:
+   - sensor.temperature_158d0001823f4a
+   - sensor.humidity_158d0001823f4a
+livingroom:
+  name: 'Living Room'
+  entities:
+   - switch.samsung_40inch
+   - switch.chuwi
+   - sensor.temperature_158d0001824749
+   - sensor.humidity_158d0001824749
+   - sensor.frontdoor_status
+   - sensor.illumination_286c0788abe2
+weather:
+  name: Weather
+  entities:
+    - sensor.dark_sky_temperature
+    - sensor.dark_sky_daily_high_temperature
+    - sensor.dark_sky_daily_low_temperature
+    - sensor.dark_sky_summary
+    - sensor.dark_sky_precip_probability
+    - sensor.dark_sky_precip_intensity  
+
+miflora:
+  name: Mi Flora Flower Sensor
+  entities:
+    - sensor.mi_flora_conductivity
+    - sensor.mi_flora_moisture
+    - sensor.mi_flora_light_intensity
+    - sensor.mi_flora_temperature
+    - sensor.mi_flora_battery

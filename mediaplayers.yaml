@@ -1,0 +1,7 @@
+- platform: kodi
+  host: 192.168.1.109
+- platform: yamaha
+  host: 192.168.1.110
+- platform: spotify
+  client_id: !secret spotify_client_id
+  client_secret: !secret spotify_client_secret

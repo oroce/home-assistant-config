@@ -1,0 +1,16 @@
+robi_discover_weekly:
+  alias: "robi's discover weekly"
+  sequence:
+    - service: media_player.volume_set
+      data:
+        entity_id: media_player.spotify
+        volume_level: '0.40'
+    - service: media_player.select_source
+      data:
+        entity_id: media_player.spotify
+        source: 'HTR-4069 FA627C'
+    - service: media_player.play_media
+      data:
+        entity_id: media_player.spotify
+        media_content_id: 'spotify:user:spotify:playlist:37i9dQZEVXcCeZo7lcuJox'
+        media_content_type: playlist

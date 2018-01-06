@@ -1,0 +1,88 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 103
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Budapest
+  customize: !include_dir_merge_named customize
+# Show links to resources in log and frontend
+
+# Enables the frontend
+frontend:
+
+# Enables configuration UI
+config:
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: !secret http_password
+  # Uncomment this if you are using SSL or running in Docker etc
+  base_url: !secret http_url 
+  use_x_forwarded_for: True
+  cors_allowed_origins:
+    - https://sandbox.webpackbin.com
+    - !secret http_url
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+  ignore:
+    - yamaha
+# Allows you to issue voice commands from the frontend in enabled browsers
+#conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+sensor: !include sensors.yaml
+
+group: !include groups.yaml
+
+
+light: !include lights.yaml
+
+switch: !include switches.yaml
+
+media_player: !include mediaplayers.yaml
+
+device_tracker: !include devicetrackers.yaml
+
+notify: !include notify.yaml
+
+xiaomi_aqara: !include xiaomiaqara.yaml
+
+automation: !include automations.yaml
+
+script: !include scripts.yaml
+    
+mqtt:
+  broker: !secret mqtt_broker
+  username: !secret mqtt_username
+  password: !secret mqtt_password
+  port: !secret mqtt_port
+google_assistant:
+  project_id: !secret google_assistant_project_id
+  client_id: !secret google_assistant_client_id 
+  access_token: !secret google_assistant_access_token 
+  exposed_domains:
+    - switch
+    - light
+    - group
+    - media_player
+    #- script
+#mqtt_eventstream:
+#  publish_topic: home-assistant-events
+#mqtt_export:
+#  public_topic: 'home-assistant/states'

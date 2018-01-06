@@ -1,0 +1,73 @@
+- alias: Nobody is at home
+  trigger:
+    platform: state
+    entity_id: device_tracker.oroce_nexus6,device_tracker.dori_android,device_tracker.dani_iphone
+    from: "home"
+    to: "not_home"
+  action:
+    - service: notify.haslack
+      data_template:
+        message: >
+          {{ trigger.to_state.attributes.friendly_name }} went away, the flat is empty.
+    - service: notify.browser1
+      data_template:
+        message: >
+          {{ trigger.to_state.attributes.friendly_name }} went away, the flat is empty.
+        title: >
+          Nobody is at home. 
+        data:
+          tag: "home_notification"
+
+- alias: Somebody got home
+  trigger:
+    platform: state
+    entity_id: device_tracker.oroce_nexus6,device_tracker.dori_android,device_tracker.dani_iphone
+    from: "not_home"
+    to: "home"
+  action:
+    - service: notify.haslack
+      data_template:
+        message: >
+          {{ trigger.to_state.attributes.friendly_name }} got home, yay!
+    - service: notify.browser1
+      data_template:
+        message: >
+          {{ trigger.to_state.attributes.friendly_name }} got home, yay!
+        title: >
+          Flat isn't empty anymore
+        data:
+          tag: "home_notification"
+      
+
+- alias: oroce change
+  hide_entity: True
+  trigger:
+    platform: state
+    entity_id: device_tracker.oroce_nexus6
+  action:
+    service: notify.haslack
+    data_template:
+      message: >
+        {{ trigger.to_state.attributes.friendly_name }} went from {{ trigger.from_state.state }} to {{ trigger.to_state.state }}
+- alias: state sync for nextion
+  hide_entity: True
+  trigger:
+    - platform: mqtt
+      topic: nextion/request-state
+    - platform: state
+      entity_id: sensor.humidity_158d000153196d, sensor.temperature_158d000153196d, sensor.temperature_158d0001824749,sensor.humidity_158d0001824749,  sensor.temperature_158d0001823f4a,sensor.humidity_158d0001823f4a, sensor.frontdoor_status
+  action:
+    service: mqtt.publish
+    data_template:
+      topic: "nextion/reply-state"
+      retain: True
+      payload: > 
+        {
+          "bedroom-humidity": {{ states.sensor.humidity_158d000153196d.state | string }},
+          "bedroom-temperature": {{ states.sensor.temperature_158d000153196d.state | string }},
+          "living-room-temperature": {{ states.sensor.temperature_158d0001824749.state | string }},
+          "living-room-humidity": {{ states.sensor.humidity_158d0001824749.state | string }},
+          "loggia-temperature": {{ states.sensor.temperature_158d0001823f4a.state | string }},
+          "loggia-humidity": {{ states.sensor.humidity_158d0001823f4a.state | string }},
+          "frontdoor": "{{ states.sensor.frontdoor_status.state | string }}"
+          }
