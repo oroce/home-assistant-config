@@ -34,7 +34,7 @@ jobs:
             DELIM
       - run:
           name: check config
-          command: hass -c . --script check_config >/tmp/hass.log
+          command: hass -c . --script check_config
       - run:
           name: show log
           command: cat /tmp/hass.log
