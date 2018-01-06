@@ -30,7 +30,7 @@ jobs:
             mqtt_port: 1773
             google_assistant_project_id: dummy
             google_assistant_client_id: dummy
-            google_assistant_access_token: dummy
+            google_assistant_access_token_: dummy
             DELIM
       - run:
           name: check config
