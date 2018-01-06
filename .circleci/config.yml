@@ -23,7 +23,7 @@ jobs:
             slack_api_key: dummy
             gcm_api_key: dummy
             gcm_sender_id: dummy
-            xiaomi_aqara_key: dummy
+            xiaomi_aqara_key: dummydummydummyd
             mqtt_broker: dummy
             mqtt_username: dummy
             mqtt_password: dummy
