@@ -30,17 +30,8 @@ jobs:
             mqtt_port: 1773
             google_assistant_project_id: dummy
             google_assistant_client_id: dummy
-            google_assistant_access_token_: dummy
+            google_assistant_access_token: dummy
             DELIM
       - run:
           name: check config
           command: hass -c . --script check_config
-      - run:
-          name: show log
-          command: cat /tmp/hass.log
-      - run:
-          name: validate log output
-          command: |
-            if grep --quiet -i error /tmp/hass.log; then
-              exit 1
-            fi
