@@ -11,5 +11,7 @@ jobs:
           command: |
             echo -n "http_url: http://example.com\http_password: dummy" >secrets.yaml
       - run:
+          command: find ./  -print
+      - run:
           name: check config
           command: hass -c . --script check_config
