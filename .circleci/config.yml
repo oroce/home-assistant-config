@@ -12,7 +12,7 @@ jobs:
       - run:
           name: create dummy config
           command: |
-            echo -e "http_url: http://example.com\nhttp_password: dummy" >secrets.yaml
+            echo -e "http_url: http://example.com\nhttp_password: dummy\nhome_latitude: 47\nhome_longitude: 19\ndarksky_apikey: dummy\nspotify_client_id: 123\nspotify_client_secret: 124" >secrets.yaml
       - run:
           name: check config
           command: hass -c . --script check_config | grep -i error && exit 1
