@@ -12,7 +12,26 @@ jobs:
       - run:
           name: create dummy config
           command: |
-            echo -e "http_url: http://example.com\nhttp_password: dummy\nhome_latitude: 47\nhome_longitude: 19\ndarksky_apikey: dummy\nspotify_client_id: 123\nspotify_client_secret: 124" >secrets.yaml
+            cat > ./secrets.yaml <<DELIM
+            http_url: http://example.com
+            http_password: dummy
+            home_latitude: 47
+            home_longitude: 19
+            darksky_apikey: dummy
+            spotify_client_id: 123
+            spotify_client_secret: 124
+            slack_api_key: dummy
+            gcm_api_key: dummy
+            gcm_sender_id: dummy
+            xiaomi_aqara_key: dummy
+            mqtt_broker: dummy
+            mqtt_username: dummy
+            mqtt_password: dummy
+            mqtt_port: 1773
+            google_assistant_project_id: dummy
+            google_assistant_client_id: dummy
+            google_assistant_access_token: dummy
+            DELIM
       - run:
           name: check config
           command: hass -c . --script check_config | grep -i error && exit 1
