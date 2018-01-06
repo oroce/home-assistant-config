@@ -12,7 +12,7 @@ jobs:
       - run:
           name: create dummy config
           command: |
-            echo -n "http_url: http://example.com\http_password: dummy" >secrets.yaml
+            echo -e "http_url: http://example.com\nhttp_password: dummy" >secrets.yaml
       - run:
           name: check config
-          command: hass -c . --script check_config
+          command: hass -c . --script check_config | grep -i error && exit 1
