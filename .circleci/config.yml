@@ -1,0 +1,17 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: homeassistant/home-assistant
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: install-npm
+          command: npm install
+      - run:
+          name: create dummy config
+          command: echo -n 'http_url: http://example.com\http_password: dummy' >secrets.yaml
+      - run:
+          name: check config
+          command: hass -c . --script check_config
