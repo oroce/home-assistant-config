@@ -34,10 +34,13 @@ jobs:
             DELIM
       - run:
           name: check config
-          command: hass -c . --script check_config | tee >./hass-config-check.log
+          command: hass -c . --script check_config >/tmp/hass.log
+      - run:
+          name: show log
+          command: cat /tmp/hass.log
       - run:
           name: validate log output
           command: |
-            if grep --quiet -i error ./hass-config-check.log; then
+            if grep --quiet -i error /tmp/hass.log; then
               exit 1
             fi
