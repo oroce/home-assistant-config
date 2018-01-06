@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: install home assistant
-          command: pip3 install homeassistant
+          command: sudo pip3 install homeassistant
       - run:
           name: create dummy config
           command: |
