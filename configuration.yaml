@@ -18,6 +18,7 @@ frontend:
 
 # Enables configuration UI
 config:
+cloud:
 http:
   # Uncomment this to add a password (recommended!)
   api_password: !secret http_password
@@ -86,3 +87,9 @@ google_assistant:
 #  publish_topic: home-assistant-events
 #mqtt_export:
 #  public_topic: 'home-assistant/states'
+
+tts:
+  - platform: google
+    cache: true
+    cache_dir: /tmp/tts
+    time_memory: 300

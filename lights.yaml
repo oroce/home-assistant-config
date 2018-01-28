@@ -5,3 +5,8 @@
       transition: 1000
       use_music_mode: False
       save_on_change: False
+- platform: mqtt
+  name: "Corridor light"
+  command_topic: "cmnd/sonoff/Backlog"
+  payload_on: "RfKey1"
+  payload_off: "RfKey2"
