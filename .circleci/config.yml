@@ -31,6 +31,9 @@ jobs:
             google_assistant_project_id: dummy
             google_assistant_client_id: dummy
             google_assistant_access_token: dummy
+            unifi_host: 192.1.1.1
+            unifi_username: admin
+            unifi_password: password
             DELIM
       - run:
           name: check config
