@@ -189,13 +189,6 @@ f4911e053a74:
   track: false
   vendor: ZHUHAI EWPE INFORMATION TECHNOLOGY INC
 
-94652d2fceaa:
-  hide_if_away: false
-  mac: 94:65:2D:2F:CE:AA
-  name: 94652d2fceaa
-  picture:
-  track: false
-  vendor: OnePlus Technology (Shenzhen) Co., Ltd
 
 a0f3c1c59798:
   hide_if_away: false
