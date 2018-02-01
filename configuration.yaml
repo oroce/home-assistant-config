@@ -67,7 +67,8 @@ xiaomi_aqara: !include xiaomiaqara.yaml
 automation: !include automations.yaml
 
 script: !include scripts.yaml
-    
+
+climate: !include climates.yaml
 mqtt:
   broker: !secret mqtt_broker
   username: !secret mqtt_username

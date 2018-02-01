@@ -1,0 +1,47 @@
+- platform: mqtt
+  # Change to whatever you want
+  name: Gree HVAC
+
+  # Change MQTT_TOPIC_PREFIX to what you've set in addon options
+  current_temperature_topic: "MQTT_TOPIC_PREFIX/temperature/get"
+  temperature_command_topic: "MQTT_TOPIC_PREFIX/temperature/set"
+  temperature_state_topic: "MQTT_TOPIC_PREFIX/temperature/get"
+  mode_state_topic: "MQTT_TOPIC_PREFIX/mode/get"
+  mode_command_topic: "MQTT_TOPIC_PREFIX/mode/set"
+  fan_mode_state_topic: "MQTT_TOPIC_PREFIX/fanspeed/get"
+  fan_mode_command_topic: "MQTT_TOPIC_PREFIX/fanspeed/set"
+  swing_mode_state_topic: "MQTT_TOPIC_PREFIX/swingvert/get"
+  swing_mode_command_topic: "MQTT_TOPIC_PREFIX/swingvert/set"
+  power_state_topic: "MQTT_TOPIC_PREFIX/power/get"
+  power_command_topic: "MQTT_TOPIC_PREFIX/power/set"
+
+  # Keep the following as is
+  payload_off: 0
+  payload_on: 1
+  modes:
+    - none
+    - auto
+    - cool
+    - dry
+    - fan
+    - heat
+  swing_modes:
+    - default
+    - full
+    - fixedTop
+    - fixedMidTop
+    - fixedMid
+    - fixedMidBottom
+    - fixedBottom
+    - swingBottom
+    - swingMidBottom
+    - swingMid
+    - swingMidTop
+    - swingTop
+  fan_modes:
+    - auto
+    - low
+    - mediumLow
+    - medium
+    - mediumHigh
+    - high
