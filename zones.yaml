@@ -1,0 +1,5 @@
+- name: Intellyo
+  latitude: !secret robi_work_latitude
+  longitude: !secret robi_work_longitude
+  radius: 200
+  icon: mdi:laptop

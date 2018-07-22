@@ -6,3 +6,7 @@
   platform: html5
   gcm_api_key: !secret gcm_api_key
   gcm_sender_id: !secret gcm_sender_id
+- name: pislack
+  platform: slack
+  api_key: !secret pi_slack_api_key
+  default_channel: '#oroce-test'

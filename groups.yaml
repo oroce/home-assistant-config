@@ -36,3 +36,4 @@ miflora:
     - sensor.mi_flora_light_intensity
     - sensor.mi_flora_temperature
     - sensor.mi_flora_battery
+

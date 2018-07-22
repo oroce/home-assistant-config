@@ -1,7 +1,9 @@
 - platform: kodi
-  host: 192.168.1.109
-- platform: kodi
+  name: BedroomKodi
   host: 192.168.1.116
+- platform: kodi
+  host: 192.168.1.120
+  name: LivingRoomKodi
 - platform: yamaha
   host: 192.168.1.110
 - platform: spotify

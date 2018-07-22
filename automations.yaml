@@ -2,72 +2,156 @@
   trigger:
     platform: state
     entity_id: device_tracker.oroce_nexus6,device_tracker.dori_android,device_tracker.dani_iphone
-    from: "home"
-    to: "not_home"
+    from: home
+    to: not_home
   action:
-    - service: notify.haslack
-      data_template:
-        message: >
-          {{ trigger.to_state.attributes.friendly_name }} went away, the flat is empty.
-    - service: notify.browser1
-      data_template:
-        message: >
-          {{ trigger.to_state.attributes.friendly_name }} went away, the flat is empty.
-        title: >
-          Nobody is at home. 
-        data:
-          tag: "home_notification"
+  - service: notify.haslack
+    data_template:
+      message: '{{ trigger.to_state.attributes.friendly_name }} went away, the flat
+        is empty.
 
+        '
+  - service: notify.browser1
+    data_template:
+      message: '{{ trigger.to_state.attributes.friendly_name }} went away, the flat
+        is empty.
+
+        '
+      title: "Nobody is at home. \n"
+      data:
+        tag: home_notification
+  id: 667c97ed0ba0427ab7a76374f04761a2
 - alias: Somebody got home
   trigger:
     platform: state
     entity_id: device_tracker.oroce_nexus6,device_tracker.dori_android,device_tracker.dani_iphone
-    from: "not_home"
-    to: "home"
+    from: not_home
+    to: home
   action:
-    - service: notify.haslack
-      data_template:
-        message: >
-          {{ trigger.to_state.attributes.friendly_name }} got home, yay!
-    - service: notify.browser1
-      data_template:
-        message: >
-          {{ trigger.to_state.attributes.friendly_name }} got home, yay!
-        title: >
-          Flat isn't empty anymore
-        data:
-          tag: "home_notification"
-      
+  - service: notify.haslack
+    data_template:
+      message: '{{ trigger.to_state.attributes.friendly_name }} got home, yay!
 
+        '
+  - service: notify.browser1
+    data_template:
+      message: '{{ trigger.to_state.attributes.friendly_name }} got home, yay!
+
+        '
+      title: 'Flat isn''t empty anymore
+
+        '
+      data:
+        tag: home_notification
+  id: 2c03a7d62baa439d9e72300a5fcbdd89
 - alias: oroce change
-  hide_entity: True
+  hide_entity: true
   trigger:
     platform: state
     entity_id: device_tracker.oroce_nexus6
   action:
     service: notify.haslack
     data_template:
-      message: >
-        {{ trigger.to_state.attributes.friendly_name }} went from {{ trigger.from_state.state }} to {{ trigger.to_state.state }}
+      message: '{{ trigger.to_state.attributes.friendly_name }} went from {{ trigger.from_state.state
+        }} to {{ trigger.to_state.state }}
+
+        '
+  id: acdb715ccea04c3ea15ca84668f7c82d
 - alias: state sync for nextion
-  hide_entity: True
+  hide_entity: true
   trigger:
-    - platform: mqtt
-      topic: nextion/request-state
-    - platform: state
-      entity_id: sensor.humidity_158d000153196d, sensor.temperature_158d000153196d, sensor.temperature_158d0001824749,sensor.humidity_158d0001824749,  sensor.temperature_158d0001823f4a,sensor.humidity_158d0001823f4a, sensor.frontdoor_status
+  - platform: mqtt
+    topic: nextion/request-state
+  - platform: state
+    entity_id: sensor.humidity_158d000153196d, sensor.temperature_158d000153196d,
+      sensor.temperature_158d0001824749,sensor.humidity_158d0001824749,  sensor.temperature_158d0001823f4a,sensor.humidity_158d0001823f4a,
+      sensor.frontdoor_status
   action:
     service: mqtt.publish
     data_template:
-      topic: "nextion/reply-state"
-      retain: True
-      payload: > 
-        {
-          "bedroom-humidity": {{ states.sensor.humidity_158d000153196d.state | string }},
-          "bedroom-temperature": {{ states.sensor.temperature_158d000153196d.state | string }},
-          "living-room-temperature": {{ states.sensor.temperature_158d0001824749.state | string }},
-          "living-room-humidity": {{ states.sensor.humidity_158d0001824749.state | string }},
-          "loggia-temperature": {{ states.sensor.temperature_158d0001823f4a.state | string }},
-          "loggia-humidity": {{ states.sensor.humidity_158d0001823f4a.state | string }},
-          "frontdoor": "{{ states.sensor.frontdoor_status.state | string }}"
-          }
+      topic: nextion/reply-state
+      retain: true
+      payload: "{\n  \"bedroom-humidity\": {{ states.sensor.humidity_158d000153196d.state\
+        \ | string }},\n  \"bedroom-temperature\": {{ states.sensor.temperature_158d000153196d.state\
+        \ | string }},\n  \"living-room-temperature\": {{ states.sensor.temperature_158d0001824749.state\
+        \ | string }},\n  \"living-room-humidity\": {{ states.sensor.humidity_158d0001824749.state\
+        \ | string }},\n  \"loggia-temperature\": {{ states.sensor.temperature_158d0001823f4a.state\
+        \ | string }},\n  \"loggia-humidity\": {{ states.sensor.humidity_158d0001823f4a.state\
+        \ | string }},\n  \"frontdoor\": \"{{ states.sensor.frontdoor_status.state\
+        \ | string }}\"\n  }\n"
+  id: 394a20709af1481abc1a4f5d2503df9d
+- id: '1521749953052'
+  alias: kodi2 -> turn off light
+  trigger:
+  - entity_id: media_player.kodi
+    from: idle
+    platform: state
+    to: playing
+  - entity_id: media_player.kodi
+    from: paused
+    platform: state
+    to: playing
+  condition: []
+  action:
+  - alias: ''
+    data:
+      entity_id: light.bedroom
+    service: light.turn_off
+- id: '1531900949040'
+  alias: arrived at work
+  trigger:
+  - entity_id: device_tracker.netvdgiw_oneplus5
+    event: enter
+    platform: zone
+    zone: zone.intellyo
+  condition: []
+  action:
+  - data:
+      data:
+        actions:
+        - action: checkin
+          title: Checkin
+      message: Arrived at Intellyo
+    service: notify.browser_unnamed_device_2
+- id: '1531900999529'
+  alias: left work
+  trigger:
+  - entity_id: device_tracker.netvdgiw_oneplus5
+    event: leave
+    platform: zone
+    zone: zone.intellyo
+  condition: []
+  action:
+  - data:
+      data:
+        actions:
+        - action: checkout
+          title: Checkout
+      message: Left Intellyo
+    service: notify.browser_unnamed_device_2
+- id: '1531990952517'
+  alias: Checkin at intellyo
+  trigger:
+  - event_data:
+      action: checkin
+    event_type: html5_notification.clicked
+    platform: event
+  condition: []
+  action:
+  - data:
+      message: ':wave:'
+      target: '#availability'
+    service: notify.pislack
+- id: '1531991095669'
+  alias: Checkout at intellyo
+  trigger:
+  - event_data:
+      action: checkout
+    event_type: html5_notification.clicked
+    platform: event
+  condition: []
+  action:
+  - data:
+      message: ':checkered_flag:'
+      target: '#availability'
+    service: notify.pislack

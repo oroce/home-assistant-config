@@ -21,3 +21,5 @@
   state_topic: "sensor/front-door"
   unit_of_measurement: ""
 #  - platform: aqara
+- platform: torque
+  email: robert@oroszi.net

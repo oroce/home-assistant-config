@@ -14,7 +14,7 @@ dori_android:
   name: Dori
   picture: !secret avatar_dori
   mac: 78:F8:82:B5:B4:84
-  track: yes
+  track: no
   hide_if_away: no
 
 dani_iphone:
@@ -224,3 +224,73 @@ b827eb0fc703:
   track: false
   vendor: Espressif Inc.
 
+
+dorasiphone:
+  hide_if_away: false
+  icon:
+  mac: CC:25:EF:1D:EB:81
+  name: Doras-iPhone
+  picture:
+  track: no
+  vendor: unknown
+
+macbookair:
+  hide_if_away: false
+  icon:
+  mac: D0:81:7A:B9:E1:A4
+  name: MacBook-Air
+  picture:
+  track: true
+  vendor: Apple, Inc.
+
+laptopfhu2vcoa:
+  hide_if_away: false
+  icon:
+  mac: 98:22:EF:52:CB:C7
+  name: LAPTOP-FHU2VCOA
+  picture:
+  track: no
+  vendor: Liteon Technology Corporation
+
+zoltanpc:
+  hide_if_away: true
+  icon:
+  mac: 70:F3:95:E5:B7:2A
+  name: zoltan-PC
+  picture:
+  track: no
+  vendor: Universal Global Scientific Industrial Co., Ltd.
+
+84c7ea383b7f:
+  hide_if_away: true
+  icon:
+  mac: 84:C7:EA:38:3B:7F
+  name: 84c7ea383b7f
+  picture:
+  track: no
+  vendor: Sony Mobile Communications AB
+
+huawei_p9_lite:
+  hide_if_away: false
+  icon:
+  mac: 44:6E:E5:5F:0E:BB
+  name: HUAWEI P9 lite
+  picture:
+  track: no
+  vendor: HUAWEI TECHNOLOGIES CO.,LTD
+
+b827eb27cfce:
+  hide_if_away: false
+  icon:
+  mac: B8:27:EB:27:CF:CE
+  name: b827eb27cfce
+  picture:
+  track: no
+
+doraiphoneja:
+  hide_if_away: false
+  icon:
+  mac: E4:2B:34:80:0D:82
+  name: Dora-iPhone-ja
+  picture: !secret avatar_dori
+  track: true

@@ -1,16 +1,23 @@
 robi_discover_weekly:
-  alias: "robi's discover weekly"
+  alias: robi's discover weekly
   sequence:
-    - service: media_player.volume_set
-      data:
-        entity_id: media_player.spotify
-        volume_level: '0.40'
-    - service: media_player.select_source
-      data:
-        entity_id: media_player.spotify
-        source: 'HTR-4069 FA627C'
-    - service: media_player.play_media
-      data:
-        entity_id: media_player.spotify
-        media_content_id: 'spotify:user:spotify:playlist:37i9dQZEVXcCeZo7lcuJox'
-        media_content_type: playlist
+  - service: media_player.volume_set
+    data:
+      entity_id: media_player.spotify
+      volume_level: '0.40'
+  - service: media_player.select_source
+    data:
+      entity_id: media_player.spotify
+      source: HTR-4069 FA627C
+  - service: media_player.play_media
+    data:
+      entity_id: media_player.spotify
+      media_content_id: spotify:user:spotify:playlist:37i9dQZEVXcCeZo7lcuJox
+      media_content_type: playlist
+'1532201334955':
+  alias: Update Kodi library
+  sequence:
+  - data:
+      entity_id: media_player.livingroomkodi, media_player.bedroomkodi
+      method: VideoLibrary.Scan
+    service: media_player.kodi_call_method

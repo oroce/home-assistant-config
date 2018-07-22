@@ -3,3 +3,4 @@
   host: !secret unifi_host
   username: !secret unifi_username
   password: !secret unifi_password
+  track_new_devices: no
